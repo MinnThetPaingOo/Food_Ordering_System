@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Items</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Menu</th>
+            <th>Description</th>
+            <th>Calories</th>
+            <th>Price</th>
+            <th>Action</th>
+
+        </tr>
+        {%for item in items %}
+        <tr>
+            <td>{{item.item_name}}</td>
+            <td>{{item.menu}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.calories}}</td>
+            <td>{{item.price}}</td>
+            <td><a href="/update/{{ item.id }}">Edit</a>  <a href="/delete/{{ item.id }}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
